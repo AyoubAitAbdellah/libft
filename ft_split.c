@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-abd <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aait-abd <aait-abd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 22:38:43 by aait-abd          #+#    #+#             */
-/*   Updated: 2026/10/26 21:20:20 by aait-abd         ###   ########.fr       */
+/*   Updated: 2026/11/05 02:13:44 by aait-abd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
-	int	count;
-	int	i;
+	size_t	count;
+	size_t	i;
 
 	count = 0;
 	i = 0;
@@ -70,17 +70,20 @@ static int	ft_fill_arr(char **arr, char const *s, char c, size_t words)
 	{
 		while (s[start] == c)
 			start++;
-		len = 0;
-		while (s[start + len] != '\0' && s[start + len] != c)
-			len++;
-		arr[i] = ft_get_word(s, start, len);
-		if (arr[i] == NULL)
+		if (s[start] != '\0')
 		{
-			ft_free_words(arr, i);
-			return (0);
+			len = 0;
+			while (s[start + len] != '\0' && s[start + len] != c)
+				len++;
+			arr[i] = ft_get_word(s, start, len);
+			if (arr[i] == NULL)
+			{
+				ft_free_words(arr, i);
+				return (0);
+			}
+			start += len;
+			i++;
 		}
-		start += len;
-		i++;
 	}
 	arr[i] = NULL;
 	return (1);
