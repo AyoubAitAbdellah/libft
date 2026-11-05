@@ -6,7 +6,7 @@
 /*   By: aait-abd <aait-abd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 22:38:43 by aait-abd          #+#    #+#             */
-/*   Updated: 2026/11/05 02:13:44 by aait-abd         ###   ########.fr       */
+/*   Updated: 2026/11/05 03:10:13 by aait-abd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,20 +70,17 @@ static int	ft_fill_arr(char **arr, char const *s, char c, size_t words)
 	{
 		while (s[start] == c)
 			start++;
-		if (s[start] != '\0')
+		len = 0;
+		while (s[start + len] != '\0' && s[start + len] != c)
+			len++;
+		arr[i] = ft_get_word(s, start, len);
+		if (arr[i] == NULL)
 		{
-			len = 0;
-			while (s[start + len] != '\0' && s[start + len] != c)
-				len++;
-			arr[i] = ft_get_word(s, start, len);
-			if (arr[i] == NULL)
-			{
-				ft_free_words(arr, i);
-				return (0);
-			}
-			start += len;
-			i++;
+			ft_free_words(arr, i);
+			return (0);
 		}
+		start += len;
+		i++;
 	}
 	arr[i] = NULL;
 	return (1);
