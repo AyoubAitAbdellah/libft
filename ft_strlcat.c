@@ -6,7 +6,7 @@
 /*   By: aait-abd <aait-abd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:46:00 by aait-abd          #+#    #+#             */
-/*   Updated: 2026/10/29 16:02:37 by aait-abd         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:17:40 by aait-abd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + len_src);
 	i = 0;
 	j = len_dst;
-	while (src[i] != '\0' && i < size - len_dst - 1)
+	while (i < size - len_dst - 1 && src[i] != '\0')
 	{
 		dst[j] = src[i];
 		j++;

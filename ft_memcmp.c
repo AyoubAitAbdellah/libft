@@ -6,7 +6,7 @@
 /*   By: aait-abd <aait-abd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 12:00:01 by aait-abd          #+#    #+#             */
-/*   Updated: 2026/11/02 23:11:27 by aait-abd         ###   ########.fr       */
+/*   Updated: 2026/11/06 00:59:46 by aait-abd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	if (i == n)
 		return (0);
-	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+	return (str1[i] - str2[i]);
 }

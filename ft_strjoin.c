@@ -6,7 +6,7 @@
 /*   By: aait-abd <aait-abd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 22:54:24 by aait-abd          #+#    #+#             */
-/*   Updated: 2026/11/03 18:51:48 by aait-abd         ###   ########.fr       */
+/*   Updated: 2026/11/06 01:01:43 by aait-abd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_memcpy(s + s1_len, s2, s2_len);
 	s[s1_len + s2_len] = '\0';
 	return (s);
-}
-int main()
-{
-	char *str1 = NULL;
-	char *str2 = " 1337";
-	printf("%s\n", ft_strjoin(str1, str2));
 }

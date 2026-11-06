@@ -6,7 +6,7 @@
 /*   By: aait-abd <aait-abd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 10:58:39 by aait-abd          #+#    #+#             */
-/*   Updated: 2026/10/29 15:55:51 by aait-abd         ###   ########.fr       */
+/*   Updated: 2026/11/06 01:04:06 by aait-abd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (len_src);
 }
-

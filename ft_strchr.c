@@ -6,7 +6,7 @@
 /*   By: aait-abd <aait-abd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 13:16:12 by aait-abd          #+#    #+#             */
-/*   Updated: 2026/10/30 22:35:52 by aait-abd         ###   ########.fr       */
+/*   Updated: 2026/11/06 21:24:49 by aait-abd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == ((char)c))
+		if ((unsigned char)s[i] == ((unsigned char)c))
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		return ((char *)&s[i]);
 	return (NULL);
 }
